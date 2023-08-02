@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.viego.financialrecommendsystem.mapper.ProductMapper">
+
+    <select id="getIdByName" parameterType="string" resultType="long">
+        select product_id from product where product_name = #{arg0}
+    </select>
+
+    <select id="getProductNameById" parameterType="long" resultType="string" >
+        select product_name from product where product_id = #{arg0}
+    </select>
+
+    <insert id="record" parameterType="string">
+        insert into access_record (user_id, product_id,product_type) values(#{userId},#{productId},#{type})
+    </insert>
+
+</mapper>

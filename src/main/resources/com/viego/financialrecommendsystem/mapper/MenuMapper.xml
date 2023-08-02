@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="com.viego.financialrecommendsystem.mapper.MenuMapper">
+    <resultMap id="menuResultMap" type="com.viego.financialrecommendsystem.entity.Menu">
+        <id property="menuId" column="menu_id" javaType="long"  />
+        <result property="menuName" column="menu_name" javaType="string"/>
+        <result property="type" column="type" javaType="string"/>
+        <result property="createBy" column="create_by" javaType="string"  />
+        <result property="createTime" column="create_time" javaType="date"  />
+        <result property="updateBy" column="update_by" javaType="string" />
+        <result property="updateTime" column="update_time" javaType="date"  />
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="menuResultMap">
+        select * from menu
+    </select>
+
+</mapper>
